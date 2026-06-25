@@ -1,0 +1,153 @@
+% Professional resume — compile with: xelatex resume.tex
+
+\documentclass[9pt,letterpaper]{article}
+
+\usepackage{ifxetex}
+\ifxetex
+  \usepackage{fontspec}
+  \setmainfont{Source Sans 3}[
+    BoldFont = {Source Sans 3 Bold}
+  ]
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage[scaled=0.92]{helvet}
+\fi
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage[
+  top=0.4in,
+  bottom=0.4in,
+  left=0.55in,
+  right=0.55in
+]{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks,unicode]{hyperref}
+\usepackage{fontawesome5}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% Palette
+\definecolor{accent}{HTML}{1B3A4B}
+\definecolor{muted}{HTML}{4A4A4A}
+\definecolor{link}{HTML}{1A5F7A}
+
+\hypersetup{colorlinks=true, urlcolor=link, linkcolor=link}
+
+% Section style
+\titleformat{\section}
+  {\large\bfseries\color{accent}}
+  {}
+  {0em}
+  {}
+  [\vspace{4pt}{\color{accent}\titlerule[0.8pt]}]
+\titlespacing*{\section}{0pt}{8pt}{5pt}
+
+% Entry helpers
+\newcommand{\resumeSubheading}[4]{%
+  \vspace{2pt}%
+  \textbf{#1} \hfill {\bfseries #2}\\[3pt]
+  \textit{#3} \hfill {\color{muted}\small #4}\par\vspace{2pt}%
+}
+
+\newcommand{\resumeProject}[2]{%
+  \vspace{2pt}%
+  \textbf{#1} \hfill {\color{muted}\small\textit{#2}}\par\vspace{1pt}%
+}
+
+\newcommand{\resumeItem}{\item}
+
+\newcommand{\skillLine}[2]{%
+  \textbf{#1} #2\par\vspace{1pt}%
+}
+
+\begin{document}
+
+% ---------- HEADER ----------
+\begin{center}
+  {\fontsize{26}{30}\selectfont\bfseries\color{accent} SHASHANK VA}\\[3pt]
+  {Full-Stack Developer \textbar\ B.E. CSE (Data Science)}\\[6pt]
+  \small
+  \faIcon{phone-alt}\ +91\,7022742719 \quad
+  \textbar\quad
+  \faIcon{envelope}\ \href{mailto:shashankva05@gmail.com}{shashankva05@gmail.com}\\[4pt]
+  \faIcon{map-marker-alt}\ Bangalore, India \quad
+  \textbar\quad
+  \faIcon{github}\ \href{https://github.com/Shashank-V-A}{github.com/Shashank-V-A} \quad
+  \textbar\quad
+  \faIcon{globe}\ \href{http://shashankva.me/}{Portfolio}
+\end{center}
+\vspace{2pt}
+
+% ---------- EXPERIENCE ----------
+\section{Experience}
+
+\resumeSubheading
+  {Startup Haven}{17th Jan 2026 -- 30th June 2026}
+  {Software Engineer Intern}{}
+\begin{itemize}[leftmargin=*, nosep, topsep=1pt, itemsep=0pt]
+  \resumeItem{Developed a full-stack comparison platform for quick-commerce and e-commerce apps to compare prices, offers, and delivery options across vendors.}
+  \resumeItem{Built scalable web scraping pipelines to ingest and normalize multi-source product and pricing data for reliable downstream comparisons.}
+  \resumeItem{Designed responsive user interfaces that present standardized comparison results and improve decision-making for end users.}
+\end{itemize}
+
+\resumeSubheading
+  {HAL -- RWR\&DC Department, AFCS Group}{14th July 2025 -- 13th Aug 2025}
+  {Intern}{}
+\begin{itemize}[leftmargin=*, nosep, topsep=1pt, itemsep=0pt]
+  \resumeItem{Supported automation initiatives for flight data record workflows, reducing manual processing steps in reporting pipelines.}
+  \resumeItem{Assisted in preparation and validation of flight test reports for the AFCS Group using structured documentation templates.}
+  \resumeItem{Organized datasets and improved consistency of technical reports delivered to internal stakeholders.}
+\end{itemize}
+
+% ---------- TECHNICAL SKILLS ----------
+\section{Technical Skills}
+\vspace{1pt}
+\skillLine{Frontend:}{HTML, CSS, JavaScript, TypeScript, React}
+\skillLine{Backend:}{Node.js, Express.js, Django, REST APIs, PostgreSQL, SQLite}
+\skillLine{Cloud \& Tools:}{Supabase, Vercel, Git, GitHub, OAuth, MySQL, MongoDB, Tableau, Power BI}
+
+% ---------- PROJECTS ----------
+\section{Projects}
+
+\resumeProject{BrightWords}{React, Node.js, SQLite}
+\begin{itemize}[leftmargin=*, nosep, topsep=1pt, itemsep=0pt]
+  \resumeItem{Accessibility-focused EdTech platform combining sign-language learning, AI-assisted tutoring, and inclusive literacy modules (phonics, spelling, stories, writing).}
+  \resumeItem{Team project: React frontend, Node.js API, SQLite backend. \href{https://github.com/karthik1codes/brightwords.git}{GitHub} \textbar\ \href{https://brightwords.in/}{Demo}}
+\end{itemize}
+
+\resumeProject{RankMint}{Next.js, TypeScript, Python, Supabase}
+\begin{itemize}[leftmargin=*, nosep, topsep=1pt, itemsep=0pt]
+  \resumeItem{Creator analytics platform that scores YouTube and X influencers from live API data---authenticity, growth, brand fit, and a composite RankMint score for campaign vetting (no scraped CSVs or demo profiles).}
+  \resumeItem{Built analyze, compare, leaderboard, and PDF export flows with logistic-regression ML (Python trainer synced to TypeScript), heuristic layers, and optional Supabase cache and brand workspace. \href{https://github.com/Shashank-V-A/Ratefluencer.git}{GitHub} \textbar\ \href{https://rankmint-ciphers.vercel.app/}{Demo}}
+\end{itemize}
+
+\resumeProject{VaultIQ}{React, Node.js, Express, PostgreSQL}
+\begin{itemize}[leftmargin=*, nosep, topsep=1pt, itemsep=0pt]
+  \resumeItem{Crypto expense tracker with manual trade logging, live price sync (CoinGecko/CoinDCX), and FIFO-based portfolio tracking.}
+  \resumeItem{P\&L and Indian tax logic (30\% tax, 4\% cess, 1\% TDS), CSV export, and PostgreSQL cloud sync on Vercel. \href{https://github.com/Shashank-V-A/VaultIQ.git}{GitHub} \textbar\ \href{https://vault-iq-phi.vercel.app/}{Demo}}
+\end{itemize}
+
+% ---------- EDUCATION ----------
+\section{Education}
+\resumeSubheading
+  {MVJ College Of Engineering}{Bangalore, India}
+  {B.E. in CSE -- Data Science}{Expected May 2027}
+\begin{itemize}[leftmargin=*, nosep, topsep=0pt, itemsep=0pt]
+  \resumeItem{CGPA: 8.95 / 10.0}
+  \resumeItem{Coursework: Data Structures, Algorithms, Machine Learning, Databases}
+\end{itemize}
+
+% ---------- ACHIEVEMENTS ----------
+\section{Achievements}
+\begin{itemize}[leftmargin=*, nosep, topsep=1pt, itemsep=0pt]
+  \resumeItem{\textbf{HackSpark Hackathon} (DSATM) -- Winner, Nov 2025; built and demoed full-stack solution under 24-hour deadline}
+  \resumeItem{\textbf{Growth Hackathon} (Residency BLR) -- Winner, Dec 2025; shipped prototype with pitch and live demo}
+  \resumeItem{\textbf{Express Launchpad Hackathon} (Nexla Inc) -- Winner, Jan 2026; delivered API and data-pipeline integration project}
+\end{itemize}
+
+\end{document}
