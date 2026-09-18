@@ -1,4 +1,4 @@
-% Professional resume — compile with: xelatex resume.tex
+% Cybersecurity-focused resume -- compile with: xelatex resume_cybersecurity.tex
 
 \documentclass[9pt,letterpaper]{article}
 
@@ -44,7 +44,7 @@
   {0em}
   {}
   [\vspace{4pt}{\color{accent}\titlerule[0.8pt]}]
-\titlespacing*{\section}{0pt}{8pt}{5pt}
+\titlespacing*{\section}{0pt}{6pt}{3pt}
 
 % Entry helpers
 \newcommand{\resumeSubheading}[4]{%
@@ -69,7 +69,7 @@
 % ---------- HEADER ----------
 \begin{center}
   {\fontsize{26}{30}\selectfont\bfseries\color{accent} SHASHANK VA}\\[3pt]
-  {Full-Stack Developer \textbar\ B.E. CSE (Data Science)}\\[6pt]
+  {Junior Security Analyst | B.E. CSE (Data Science)}\\[6pt]
   \small
   Phone: +91\,7022742719 \quad | \quad
   Email: \href{mailto:shashankva05@gmail.com}{shashankva05@gmail.com}\\[4pt]
@@ -78,6 +78,9 @@
   Portfolio: \href{http://shashankva.me/}{shashankva.me}
 \end{center}
 \vspace{2pt}
+
+\section{Professional Summary}
+Computer Science student targeting junior security analyst roles, with foundations in web and API security, OWASP Top 10, authentication and authorization, secure coding, networking, Python automation, and security-focused investigation workflows.
 
 % ---------- EXPERIENCE ----------
 \section{Experience}
@@ -103,9 +106,10 @@
 % ---------- TECHNICAL SKILLS ----------
 \section{Technical Skills}
 \vspace{1pt}
-\skillLine{Frontend:}{HTML, CSS, JavaScript, TypeScript, React}
-\skillLine{Backend:}{Node.js, Express.js, Django, REST APIs, PostgreSQL, SQLite}
-\skillLine{Cloud \& Tools:}{Supabase, Vercel, Git, GitHub, OAuth, MySQL, MongoDB, Tableau, Power BI}
+\skillLine{Cybersecurity:}{OWASP Top 10, Web/API Security, Vulnerability Assessment, Threat Modeling, Security Logging, Incident Response Concepts, Authentication \& Authorization (OAuth), Secure Coding}
+\skillLine{Networking:}{HTTP/S, TCP/IP, DNS, Client-Server Architecture, REST APIs}
+\skillLine{Programming \& Web:}{Python, JavaScript, TypeScript, React, Node.js, Express.js, Django, REST APIs}
+\skillLine{Databases \& Tools:}{PostgreSQL, SQLite, MySQL, MongoDB, Git, GitHub Actions, Supabase, Vercel, Tableau, Power BI}
 
 % ---------- PROJECTS ----------
 \section{Projects}
@@ -114,12 +118,6 @@
 \begin{itemize}[leftmargin=*, nosep, topsep=1pt, itemsep=0pt]
   \resumeItem{Bengaluru-focused Telegram alert system with two bots---HackathonX (Unstop, Devfolio, Devpost, Luma, and more) and SportX (Meetup, AllEvents, Eventbrite)---that notify subscribers when new hackathons or sports listings match Bangalore-first rules.}
   \resumeItem{Built httpx scrapers, SQLite deduplication, 48h/24h deadline reminders, FastAPI webhooks on Vercel with Vercel Blob subscribers, and GitHub Actions cron scans; 40+ active users across both bots. \href{https://github.com/Shashank-V-A/EventX}{GitHub} | \href{https://t.me/EventXva05Bot}{HackathonX} | \href{https://t.me/Sportx_va_bot}{SportX} }
-\end{itemize}
-
-\resumeProject{RankMint}{Next.js, TypeScript, Python, Supabase}
-\begin{itemize}[leftmargin=*, nosep, topsep=1pt, itemsep=0pt]
-  \resumeItem{Creator analytics platform that scores YouTube and X influencers from live API data---authenticity, growth, brand fit, and a composite RankMint score for campaign vetting (no scraped CSVs or demo profiles).}
-  \resumeItem{Built analyze, compare, leaderboard, and PDF export flows with logistic-regression ML (Python trainer synced to TypeScript), heuristic layers, and optional Supabase cache and brand workspace. \href{https://github.com/Shashank-V-A/Ratefluencer.git}{GitHub} | \href{https://rankmint-ciphers.vercel.app/}{Demo} }
 \end{itemize}
 
 \resumeProject{Veritas AI}{React, TypeScript, Express, Prisma, Neo4j}
