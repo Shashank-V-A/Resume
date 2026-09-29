@@ -16,10 +16,10 @@
 \renewcommand{\familydefault}{\sfdefault}
 
 \usepackage[
-  top=0.4in,
-  bottom=0.4in,
-  left=0.55in,
-  right=0.55in
+  top=0.35in,
+  bottom=0.35in,
+  left=0.5in,
+  right=0.5in
 ]{geometry}
 \usepackage{xcolor}
 \usepackage{enumitem}
@@ -30,10 +30,10 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
 
-% Palette
-\definecolor{accent}{HTML}{1B3A4B}
+% Palette --- black typography (no blue)
+\definecolor{accent}{HTML}{000000}
 \definecolor{muted}{HTML}{4A4A4A}
-\definecolor{link}{HTML}{1A5F7A}
+\definecolor{link}{HTML}{000000}
 
 \hypersetup{colorlinks=true, urlcolor=link, linkcolor=link}
 
@@ -44,17 +44,17 @@
   {0em}
   {}
   [\vspace{4pt}{\color{accent}\titlerule[0.8pt]}]
-\titlespacing*{\section}{0pt}{6pt}{3pt}
+\titlespacing*{\section}{0pt}{5pt}{3pt}
 
 % Entry helpers
 \newcommand{\resumeSubheading}[4]{%
-  \vspace{2pt}%
-  \textbf{#1} \hfill {\bfseries #2}\\[3pt]
-  \textit{#3} \hfill {\color{muted}\small #4}\par\vspace{2pt}%
+  \vspace{1pt}%
+  \textbf{#1} \hfill {\bfseries #2}\\[2pt]
+  {#3} \hfill {\color{muted}\small #4}\par\vspace{1pt}%
 }
 
 \newcommand{\resumeProject}[2]{%
-  \vspace{2pt}%
+  \vspace{1pt}%
   \textbf{#1} \hfill {\color{muted}\small\textit{#2}}\par\vspace{1pt}%
 }
 
@@ -64,23 +64,22 @@
   \textbf{#1} #2\par\vspace{1pt}%
 }
 
+\newcommand{\resumelink}[2]{\href{#1}{\textbf{#2}}}
+
 \begin{document}
 
 % ---------- HEADER ----------
 \begin{center}
-  {\fontsize{26}{30}\selectfont\bfseries\color{accent} SHASHANK VA}\\[3pt]
-  {Junior Security Analyst | B.E. CSE (Data Science)}\\[6pt]
+  {\fontsize{24}{28}\selectfont\bfseries\color{accent} SHASHANK VA}\\[2pt]
+  {Junior Security Analyst \textbar\ Web/API Security \textbar\ B.E. CSE (Data Science)}\\[4pt]
   \small
   Phone: +91\,7022742719 \quad | \quad
-  Email: \href{mailto:shashankva05@gmail.com}{shashankva05@gmail.com}\\[4pt]
-  LinkedIn: \href{https://linkedin.com/in/shashankva05}{linkedin.com/in/shashankva05} \quad | \quad
-  GitHub: \href{https://github.com/Shashank-V-A}{github.com/Shashank-V-A} \quad | \quad
-  Portfolio: \href{http://shashankva.me/}{shashankva.me}
+  Email: \resumelink{mailto:shashankva05@gmail.com}{shashankva05@gmail.com}\\[2pt]
+  LinkedIn: \resumelink{https://linkedin.com/in/shashankva05}{linkedin.com/in/shashankva05} \quad | \quad
+  GitHub: \resumelink{https://github.com/Shashank-V-A}{github.com/Shashank-V-A} \quad | \quad
+  Portfolio: \resumelink{http://shashankva.me/}{shashankva.me}
 \end{center}
-\vspace{2pt}
-
-\section{Professional Summary}
-Computer Science student targeting junior security analyst roles, with foundations in web and API security, OWASP Top 10, authentication and authorization, secure coding, networking, Python automation, and security-focused investigation workflows.
+\vspace{1pt}
 
 % ---------- EXPERIENCE ----------
 \section{Experience}
@@ -89,55 +88,62 @@ Computer Science student targeting junior security analyst roles, with foundatio
   {Startup Haven}{Jan 2026 -- Jun 2026}
   {Software Engineer Intern}{}
 \begin{itemize}[leftmargin=*, nosep, topsep=1pt, itemsep=0pt]
-  \resumeItem{Developed a full-stack comparison platform for quick-commerce and e-commerce apps to compare prices, offers, and delivery options across vendors.}
-  \resumeItem{Built scalable web scraping pipelines to ingest and normalize multi-source product and pricing data for reliable downstream comparisons.}
-  \resumeItem{Designed responsive user interfaces that present standardized comparison results and improve decision-making for end users.}
+  \resumeItem{Built multi-source scraping pipelines with input validation and normalization to reduce unreliable third-party vendor data.}
+  \resumeItem{Implemented secure REST API and UI flows for a price-comparison platform with safer handling of external data sources.}
+  \resumeItem{Hardened ingest automation for e-commerce feeds with logging and failure handling for operational reliability.}
 \end{itemize}
 
 \resumeSubheading
   {HAL -- RWR\&DC Department, AFCS Group}{Jul 2025 -- Aug 2025}
   {Intern}{}
 \begin{itemize}[leftmargin=*, nosep, topsep=1pt, itemsep=0pt]
-  \resumeItem{Supported automation initiatives for flight data record workflows, reducing manual processing steps in reporting pipelines.}
-  \resumeItem{Assisted in preparation and validation of flight test reports for the AFCS Group using structured documentation templates.}
-  \resumeItem{Organized datasets and improved consistency of technical reports delivered to internal stakeholders.}
+  \resumeItem{Supported automation of flight data record workflows with validation steps to reduce manual reporting errors.}
+  \resumeItem{Assisted in preparing and verifying flight test reports using standardized templates for auditability.}
+  \resumeItem{Organized technical datasets and improved integrity of reports for internal engineering stakeholders.}
 \end{itemize}
 
 % ---------- TECHNICAL SKILLS ----------
 \section{Technical Skills}
 \vspace{1pt}
-\skillLine{Cybersecurity:}{OWASP Top 10, Web/API Security, Vulnerability Assessment, Threat Modeling, Security Logging, Incident Response Concepts, Authentication \& Authorization (OAuth), Secure Coding}
+\skillLine{Cybersecurity:}{OWASP Top 10, Web/API Security, Vulnerability Assessment, Threat Modeling, AuthN/AuthZ, Secure Coding, Security Logging, Incident Response Concepts}
 \skillLine{Networking:}{HTTP/S, TCP/IP, DNS, Client-Server Architecture, REST APIs}
-\skillLine{Programming \& Web:}{Python, JavaScript, TypeScript, React, Node.js, Express.js, Django, REST APIs}
-\skillLine{Databases \& Tools:}{PostgreSQL, SQLite, MySQL, MongoDB, Git, GitHub Actions, Supabase, Vercel, Tableau, Power BI}
+\skillLine{Languages \& Web:}{Python, JavaScript, TypeScript, HTML, CSS, SQL, React, Next.js, Node.js, Express.js, FastAPI}
+\skillLine{Data \& Tools:}{SQLite, PostgreSQL, Neo4j, Prisma, Supabase, Vercel, GitHub Actions, Git, Stellar/Soroban, Tableau, Power BI, Web Scraping}
 
 % ---------- PROJECTS ----------
 \section{Projects}
 
 \resumeProject{EventX}{Python, FastAPI, GitHub Actions, Telegram}
 \begin{itemize}[leftmargin=*, nosep, topsep=1pt, itemsep=0pt]
-  \resumeItem{Bengaluru-focused Telegram alert system with two bots---HackathonX (Unstop, Devfolio, Devpost, Luma, and more) and SportX (Meetup, AllEvents, Eventbrite)---that notify subscribers when new hackathons or sports listings match Bangalore-first rules.}
-  \resumeItem{Built httpx scrapers, SQLite deduplication, 48h/24h deadline reminders, FastAPI webhooks on Vercel with Vercel Blob subscribers, and GitHub Actions cron scans; 40+ active users across both bots. \href{https://github.com/Shashank-V-A/EventX}{GitHub} | \href{https://t.me/EventXva05Bot}{HackathonX} | \href{https://t.me/Sportx_va_bot}{SportX} }
+  \resumeItem{Telegram alert bots (HackathonX, SportX) that scrape Unstop, Devfolio, Luma, Meetup, and related platforms with webhook-secured commands and subscriber-only alerts.}
+  \resumeItem{Built httpx scrapers, SQLite dedupe, FastAPI webhooks on Vercel, Vercel Blob subscribers, and GitHub Actions cron; 40+ users. \resumelink{https://github.com/Shashank-V-A/EventX}{GitHub} | \resumelink{https://t.me/EventXva05Bot}{HackathonX} | \resumelink{https://t.me/Sportx_va_bot}{SportX}}
+\end{itemize}
+
+\resumeProject{PrizeVault}{Next.js, TypeScript, Stellar, Soroban}
+\begin{itemize}[leftmargin=*, nosep, topsep=1pt, itemsep=0pt]
+  \resumeItem{Stellar prize escrow with dual-approval (sponsor + organizer) so neither party can move funds alone---auditable propose $\rightarrow$ approve $\rightarrow$ execute release.}
+  \resumeItem{Implemented Soroban escrow flows and Next.js consoles for secure on-chain custody of hackathon prizes. Team project. \resumelink{https://github.com/karthik1codes/prizevault}{GitHub} | \resumelink{https://prizevault.vercel.app/}{Demo}}
 \end{itemize}
 
 \resumeProject{Veritas AI}{React, TypeScript, Express, Prisma, Neo4j}
 \begin{itemize}[leftmargin=*, nosep, topsep=1pt, itemsep=0pt]
-  \resumeItem{AI credibility investigation platform that turns news, social forwards, YouTube transcripts, PDFs, and images into structured dossiers with trust scores, claim breakdowns, bias signals, and evidence context.}
-  \resumeItem{Built Mesh API analysis pipeline with web search enrichment, case-file archive, Neo4j knowledge graph, PDF/Markdown export, and Google OAuth on Vercel. \href{https://github.com/Shashank-V-A/Veritas-AI}{GitHub} | \href{https://veritas-ai-shashank.vercel.app/}{Demo}}
+  \resumeItem{AI credibility investigation platform that turns news, forwards, YouTube, PDFs, and images into dossiers with trust scores, claim status, bias signals, and evidence.}
+  \resumeItem{Built Mesh analysis pipeline, case-file archive, Neo4j claim/source graph, and PDF/Markdown export for investigation workflows. \resumelink{https://github.com/Shashank-V-A/Veritas-AI}{GitHub} | \resumelink{https://veritas-ai-shashank.vercel.app/}{Demo}}
 \end{itemize}
 
 % ---------- EDUCATION ----------
 \section{Education}
 \resumeSubheading
   {MVJ College Of Engineering}{Bangalore, India}
-  {B.E. in CSE -- Data Science}{Expected May 2027}
-\begin{itemize}[leftmargin=*, nosep, topsep=0pt, itemsep=0pt]
-  \resumeItem{CGPA: 8.65 / 10.0}
-\end{itemize}
+  {B.E. in CSE -- Data Science -- CGPA: 8.65 / 10.0}{Expected May 2027}
+
+\resumeSubheading
+  {Boscoss PU College}{Mangalore, India}
+  {Pre-University (PU / 12th) -- 91.50\%}{2021 -- 2023}
 
 % ---------- ACHIEVEMENTS ----------
 \section{Achievements}
-\small Certificate proofs: \href{http://shashankva.me/}{Portfolio certificate archive}\normalsize
+\small Certificate proofs: \resumelink{http://shashankva.me/}{Portfolio certificate archive}\normalsize
 \begin{itemize}[leftmargin=*, nosep, topsep=1pt, itemsep=0pt]
   \resumeItem{\textbf{HackSpark Hackathon} (DSATM) -- Winner, Nov 2025; built and demoed full-stack solution under 24-hour deadline}
   \resumeItem{\textbf{Growth Hackathon} (Residency BLR) -- Winner, Dec 2025; shipped prototype with pitch and live demo}

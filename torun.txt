@@ -1,0 +1,5 @@
+
+& "$env:LOCALAPPDATA\Programs\MiKTeX\miktex\bin\x64\xelatex.exe" resume.tex
+
+
+

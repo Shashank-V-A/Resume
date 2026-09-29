@@ -16,10 +16,10 @@
 \renewcommand{\familydefault}{\sfdefault}
 
 \usepackage[
-  top=0.4in,
-  bottom=0.4in,
-  left=0.55in,
-  right=0.55in
+  top=0.35in,
+  bottom=0.35in,
+  left=0.5in,
+  right=0.5in
 ]{geometry}
 \usepackage{xcolor}
 \usepackage{enumitem}
@@ -30,10 +30,10 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
 
-% Palette
-\definecolor{accent}{HTML}{1B3A4B}
+% Palette — black typography (no blue)
+\definecolor{accent}{HTML}{000000}
 \definecolor{muted}{HTML}{4A4A4A}
-\definecolor{link}{HTML}{1A5F7A}
+\definecolor{link}{HTML}{000000}
 
 \hypersetup{colorlinks=true, urlcolor=link, linkcolor=link}
 
@@ -44,17 +44,17 @@
   {0em}
   {}
   [\vspace{4pt}{\color{accent}\titlerule[0.8pt]}]
-\titlespacing*{\section}{0pt}{8pt}{5pt}
+\titlespacing*{\section}{0pt}{6pt}{4pt}
 
 % Entry helpers
 \newcommand{\resumeSubheading}[4]{%
-  \vspace{2pt}%
-  \textbf{#1} \hfill {\bfseries #2}\\[3pt]
-  \textit{#3} \hfill {\color{muted}\small #4}\par\vspace{2pt}%
+  \vspace{1pt}%
+  \textbf{#1} \hfill {\bfseries #2}\\[2pt]
+  {#3} \hfill {\color{muted}\small #4}\par\vspace{1pt}%
 }
 
 \newcommand{\resumeProject}[2]{%
-  \vspace{2pt}%
+  \vspace{1pt}%
   \textbf{#1} \hfill {\color{muted}\small\textit{#2}}\par\vspace{1pt}%
 }
 
@@ -64,20 +64,22 @@
   \textbf{#1} #2\par\vspace{1pt}%
 }
 
+\newcommand{\resumelink}[2]{\href{#1}{\textbf{#2}}}
+
 \begin{document}
 
 % ---------- HEADER ----------
 \begin{center}
-  {\fontsize{26}{30}\selectfont\bfseries\color{accent} SHASHANK VA}\\[3pt]
-  {Full-Stack Developer \textbar\ B.E. CSE (Data Science)}\\[6pt]
+  {\fontsize{24}{28}\selectfont\bfseries\color{accent} SHASHANK VA}\\[2pt]
+  {Full-Stack Developer \textbar\ B.E. CSE (Data Science)}\\[4pt]
   \small
   Phone: +91\,7022742719 \quad | \quad
-  Email: \href{mailto:shashankva05@gmail.com}{shashankva05@gmail.com}\\[4pt]
-  LinkedIn: \href{https://linkedin.com/in/shashankva05}{linkedin.com/in/shashankva05} \quad | \quad
-  GitHub: \href{https://github.com/Shashank-V-A}{github.com/Shashank-V-A} \quad | \quad
-  Portfolio: \href{http://shashankva.me/}{shashankva.me}
+  Email: \resumelink{mailto:shashankva05@gmail.com}{shashankva05@gmail.com}\\[2pt]
+  LinkedIn: \resumelink{https://linkedin.com/in/shashankva05}{linkedin.com/in/shashankva05} \quad | \quad
+  GitHub: \resumelink{https://github.com/Shashank-V-A}{github.com/Shashank-V-A} \quad | \quad
+  Portfolio: \resumelink{http://shashankva.me/}{shashankva.me}
 \end{center}
-\vspace{2pt}
+\vspace{1pt}
 
 % ---------- EXPERIENCE ----------
 \section{Experience}
@@ -103,9 +105,10 @@
 % ---------- TECHNICAL SKILLS ----------
 \section{Technical Skills}
 \vspace{1pt}
-\skillLine{Frontend:}{HTML, CSS, JavaScript, TypeScript, React}
-\skillLine{Backend:}{Node.js, Express.js, Django, REST APIs, PostgreSQL, SQLite}
-\skillLine{Cloud \& Tools:}{Supabase, Vercel, Git, GitHub, OAuth, MySQL, MongoDB, Tableau, Power BI}
+\skillLine{Languages:}{Python, JavaScript, TypeScript, HTML, CSS, SQL}
+\skillLine{Frontend:}{React, Next.js, Tailwind CSS}
+\skillLine{Backend \& Data:}{Node.js, Express.js, FastAPI, REST APIs, Prisma, SQLite, PostgreSQL, Neo4j, Supabase}
+\skillLine{Blockchain \& Tools:}{Stellar, Soroban, Vercel, GitHub Actions, Git, Telegram Bot API, Web Scraping, Tableau, Power BI}
 
 % ---------- PROJECTS ----------
 \section{Projects}
@@ -113,33 +116,34 @@
 \resumeProject{EventX}{Python, FastAPI, GitHub Actions, Telegram}
 \begin{itemize}[leftmargin=*, nosep, topsep=1pt, itemsep=0pt]
   \resumeItem{Bengaluru-focused Telegram alert system with two bots---HackathonX (Unstop, Devfolio, Devpost, Luma, and more) and SportX (Meetup, AllEvents, Eventbrite)---that notify subscribers when new hackathons or sports listings match Bangalore-first rules.}
-  \resumeItem{Built httpx scrapers, SQLite deduplication, 48h/24h deadline reminders, FastAPI webhooks on Vercel with Vercel Blob subscribers, and GitHub Actions cron scans; 40+ active users across both bots. \href{https://github.com/Shashank-V-A/EventX}{GitHub} | \href{https://t.me/EventXva05Bot}{HackathonX} | \href{https://t.me/Sportx_va_bot}{SportX} }
+  \resumeItem{Built httpx scrapers, SQLite deduplication, 48h/24h deadline reminders, FastAPI webhooks on Vercel with Vercel Blob subscribers, and GitHub Actions cron scans; 40+ active users across both bots. \resumelink{https://github.com/Shashank-V-A/EventX}{GitHub} | \resumelink{https://t.me/EventXva05Bot}{HackathonX} | \resumelink{https://t.me/Sportx_va_bot}{SportX}}
 \end{itemize}
 
-\resumeProject{RankMint}{Next.js, TypeScript, Python, Supabase}
+\resumeProject{PrizeVault}{Next.js, TypeScript, Stellar, Soroban}
 \begin{itemize}[leftmargin=*, nosep, topsep=1pt, itemsep=0pt]
-  \resumeItem{Creator analytics platform that scores YouTube and X influencers from live API data---authenticity, growth, brand fit, and a composite RankMint score for campaign vetting (no scraped CSVs or demo profiles).}
-  \resumeItem{Built analyze, compare, leaderboard, and PDF export flows with logistic-regression ML (Python trainer synced to TypeScript), heuristic layers, and optional Supabase cache and brand workspace. \href{https://github.com/Shashank-V-A/Ratefluencer.git}{GitHub} | \href{https://rankmint-ciphers.vercel.app/}{Demo} }
+  \resumeItem{Blockchain-native hackathon prize escrow on Stellar that holds sponsor funds in shared on-chain escrow until both sponsor and organizer approve payouts---neither party can move money alone.}
+  \resumeItem{Built dual-approval Soroban release flow (propose $\rightarrow$ approve $\rightarrow$ execute) with a Next.js organizer/sponsor/participant UI and TypeScript escrow APIs for Web2 and Web3 events. Team project. \resumelink{https://github.com/karthik1codes/prizevault}{GitHub} | \resumelink{https://prizevault.vercel.app/}{Demo}}
 \end{itemize}
 
 \resumeProject{Veritas AI}{React, TypeScript, Express, Prisma, Neo4j}
 \begin{itemize}[leftmargin=*, nosep, topsep=1pt, itemsep=0pt]
   \resumeItem{AI credibility investigation platform that turns news, social forwards, YouTube transcripts, PDFs, and images into structured dossiers with trust scores, claim breakdowns, bias signals, and evidence context.}
-  \resumeItem{Built Mesh API analysis pipeline with web search enrichment, case-file archive, Neo4j knowledge graph, PDF/Markdown export, and Google OAuth on Vercel. \href{https://github.com/Shashank-V-A/Veritas-AI}{GitHub} | \href{https://veritas-ai-shashank.vercel.app/}{Demo}}
+  \resumeItem{Built Mesh API analysis pipeline with web search enrichment, case-file archive, Neo4j knowledge graph, PDF/Markdown export, and Google OAuth on Vercel. \resumelink{https://github.com/Shashank-V-A/Veritas-AI}{GitHub} | \resumelink{https://veritas-ai-shashank.vercel.app/}{Demo}}
 \end{itemize}
 
 % ---------- EDUCATION ----------
 \section{Education}
 \resumeSubheading
   {MVJ College Of Engineering}{Bangalore, India}
-  {B.E. in CSE -- Data Science}{Expected May 2027}
-\begin{itemize}[leftmargin=*, nosep, topsep=0pt, itemsep=0pt]
-  \resumeItem{CGPA: 8.65 / 10.0}
-\end{itemize}
+  {B.E. in CSE -- Data Science -- CGPA: 8.65 / 10.0}{Expected May 2027}
+
+\resumeSubheading
+  {Boscoss PU College}{Mangalore, India}
+  {Pre-University (PU / 12th) -- 91.50\%}{2021 -- 2023}
 
 % ---------- ACHIEVEMENTS ----------
 \section{Achievements}
-\small Certificate proofs: \href{http://shashankva.me/}{Portfolio certificate archive}\normalsize
+\small Certificate proofs: \resumelink{http://shashankva.me/}{Portfolio certificate archive}\normalsize
 \begin{itemize}[leftmargin=*, nosep, topsep=1pt, itemsep=0pt]
   \resumeItem{\textbf{HackSpark Hackathon} (DSATM) -- Winner, Nov 2025; built and demoed full-stack solution under 24-hour deadline}
   \resumeItem{\textbf{Growth Hackathon} (Residency BLR) -- Winner, Dec 2025; shipped prototype with pitch and live demo}
